@@ -1,27 +1,21 @@
 import { Request, Response } from 'express';
+import { getById, query } from '../services/cars.service';
 
-const cars = [
-    {
-        name: 'car 1',
-        brand: "Nissan",
-        type: "Micra"
-    },
-    {
-        name: 'car 2',
-        brand: "Toyota",
-        type: "RAV 4"
+export const getCars = async (req: Request, res: Response) => {
+    try {
+        const cars = await query();
+        res.json(cars);
+    } catch (error) {
+        res.status(500).json('Could not find cars');
     }
-]
-
-export const getCars = (req: Request, res: Response) => {
-    res.json(cars)
 };
 
-export const getCarById = (req: Request, res: Response) => {
-    const carToDisplay = {
-        name: 'car 3',
-        brand: 'Nissan',
-        type: "Qashqai"
+export const getCarById = async (req: Request, res: Response) => {
+    const carId = Number(req.params.id);
+    try {
+        const car = await getById(Number(carId));
+        res.json(car);
+    } catch (error) {
+        res.status(500).json(`Could not find car with id: ${carId}`);
     }
-    res.json(carToDisplay)
 }
