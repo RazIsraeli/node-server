@@ -1,42 +1,22 @@
 import { Request, Response } from 'express';
+import { getById, query } from '../services/users.service';
 
-const users = [
-    {
-        id: 0,
-        firstName: 'Cristiano',
-        lastName: 'Ronaldo',
-        userName: 'CR7'
-    },
-    {
-        id: 1,
-        firstName: 'Lionel',
-        lastName: 'Messi',
-        userName: 'LM10'
-    },
-    {
-        id: 2,
-        firstName: 'Victor',
-        lastName: 'Boniface',
-        userName: 'Bonfilius'
-    },
-    {
-        id: 3,
-        firstName: 'Yasin',
-        lastName: 'Trainer',
-        userName: 'Yasir!'
+export const getUsers = async (req: Request, res: Response) => {
+    try {
+        const users = await query();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json('Could not find users');
     }
-]
-
-export const getUsers = (req: Request, res: Response) => {
-    res.json(users);
 }
 
-export const getUserById = (req: Request, res: Response) => {
-    const userToDisplay = {
-        id: 4,
-        firstName: 'Yossi',
-        lastName: 'Kettler',
-        usernName: 'Josef'
+export const getUserById = async (req: Request, res: Response) => {
+    const userId = Number(req.params.id);
+
+    try {
+        const user = await getById(userId);
+        res.json(user);
+    } catch (error) {
+        res.status(500).json(`Could not find user with id: ${userId}`);
     }
-    res.json(userToDisplay);
 }
