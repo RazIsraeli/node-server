@@ -8,4 +8,4 @@ This will bring the server up on port 4000 by default.
 To test the server, use Postman (or similar application).
 
 ### Production
-To run the server locally, type in the terminal "npm run start".
+To run the server on production mode, type in the terminal "npm run start".
