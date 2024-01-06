@@ -18,8 +18,8 @@ if (process.env.NODE_ENV === 'production') {
     app.use(cors(corsOptions))
 }
 
-import carsRouter from './routers/cars.router'
-import usersRouter from './routers/users.router'
+import carsRouter from './routes/cars.routes';
+import usersRouter from './routes/users.routes';
 
 app.use('/api/cars', carsRouter);
 app.use('/api/users', usersRouter);
