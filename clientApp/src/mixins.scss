@@ -1,0 +1,6 @@
+@mixin main-header {
+  border-block-end: 1px solid $border-block-primary;
+  font-size: $font-size-bigger;
+  padding: 0.5rem;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.left-container {
+  box-shadow: $default-box-shadow;
+  color: $text-color-light;
+  height: 100%;
+
+  header {
+    @include main-header;
+  }
+}

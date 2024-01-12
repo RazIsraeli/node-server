@@ -1,0 +1,17 @@
+<section class="center-container">
+  <header>Display</header>
+  <main>
+    <div class="cars--container">
+      <p *ngFor="let car of cars">{{ car.name }}</p>
+    </div>
+    <div class="users--container">
+      <p *ngFor="let user of users" (click)="onSelectUser(user.id)">{{user.userName}}</p>
+      <ng-container *ngIf="selectedUser">
+        <h3>Selected User:</h3>
+        <p>{{selectedUser.firstName}}</p>
+        <p>{{selectedUser.lastName}}</p>
+        <p>{{selectedUser.userName}}</p>
+      </ng-container>
+    </div>
+  </main>
+</section>

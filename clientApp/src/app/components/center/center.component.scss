@@ -1,0 +1,25 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.center-container {
+  box-shadow: $default-box-shadow;
+  color: $text-color-light;
+  height: 100%;
+
+  header {
+    @include main-header;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .cars--container,
+  .users--container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+  }
+
+}
