@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Car } from 'src/app/models/car';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-right',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./right.component.scss']
 })
 export class RightComponent {
-
+  @Input() selectedUser?: User;
+  @Input() selectedCar?: Car;
+  @Input() isFetchingUser?: boolean;
+  @Input() isFetchingCar?: boolean;
 }

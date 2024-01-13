@@ -11,12 +11,17 @@ export class CenterComponent {
 
   @Input() cars?: Car[];
   @Input() users?: User[];
+  @Input() selectedService?: string;
   @Input() selectedUser?: User;
   @Output() onUserSelected: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onCarSelected: EventEmitter<number> = new EventEmitter<number>();
 
-
-  onSelectUser(userId: number): void {
+  selectUser(userId: number): void {
     this.onUserSelected.emit(userId);
+  }
+
+  selectCar(carId: number): void {
+    this.onCarSelected.emit(carId);
   }
 
 }

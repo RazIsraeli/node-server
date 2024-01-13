@@ -15,6 +15,8 @@ export const getUserById = async (req: Request, res: Response) => {
 
     try {
         const user = await getById(userId);
+        console.log(`sending back user with id ${user.id}`);
+        
         res.json(user);
     } catch (error) {
         res.status(500).json(`Could not find user with id: ${userId}`);

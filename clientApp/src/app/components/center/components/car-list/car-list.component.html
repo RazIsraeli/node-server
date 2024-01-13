@@ -1,0 +1,3 @@
+<section class="car-list">
+  <app-car-preview *ngFor="let car of cars" [car]="car" (click)="onCarSelected(car.id)"></app-car-preview>
+</section>

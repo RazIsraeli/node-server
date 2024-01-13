@@ -1,0 +1,18 @@
+@import '../../../../../variables.scss';
+@import '../../../../../mixins.scss';
+
+.car-details {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    border-block-end: 1px solid $text-color-light;
+    font-size: $font-size-big;
+    font-weight: 600;
+  }
+
+  .details {
+    font-size: $font-size-small;
+  }
+}

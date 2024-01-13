@@ -22,7 +22,49 @@ const users = [
         firstName: 'Yasin',
         lastName: 'Trainer',
         userName: 'Yasir!'
-    }
+    },
+    {
+        id: 4,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Spectra'
+    },
+    {
+        id: 5,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Emberheart'
+    },
+    {
+        id: 6,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Zephyr Whisper'
+    },
+    {
+        id: 7,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Chronos Shift'
+    },
+    {
+        id: 8,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Serpent\'s Eye'
+    },
+    {
+        id: 9,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Atlas Pulse'
+    },
+    {
+        id: 10,
+        firstName: 'Yasin',
+        lastName: 'Trainer',
+        userName: 'Starborn'
+    },
 ]
 
 export function query(): Promise<any[]> {

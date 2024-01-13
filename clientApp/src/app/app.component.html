@@ -1,9 +1,9 @@
 <section class="app-container">
   <app-header class="header"></app-header>
 <section class="app">
-    <app-left class="left"></app-left>
-    <app-center class="center" [cars]="cars" [users]="users" [selectedUser]="selectedUser" (onUserSelected)="selectUser($event)"></app-center>
-    <app-right class="right"></app-right>
+    <app-left class="left" [cars]="cars" [users]="users" (selectedService)="selectService($event)"></app-left>
+    <app-center class="center" [cars]="cars" [users]="users" [selectedService]="selectedService" [selectedUser]="selectedUser" (onUserSelected)="selectUser($event)" (onCarSelected)="selectCar($event)"></app-center>
+    <app-right class="right" [selectedUser]="selectedUser" [selectedCar]="selectedCar" [isFetchingUser]="isFetchingUser" [isFetchingCar]="isFetchingCar"></app-right>
   </section>
   <app-footer class="footer"></app-footer>
 </section>

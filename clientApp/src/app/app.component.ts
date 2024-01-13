@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   cars?: Car[];
   users?: User[];
   selectedUser?: User;
+  selectedCar?: Car;
+  selectedService?: string;
+  isFetchingUser: boolean = false;
+  isFetchingCar: boolean = false;
 
   constructor(private carService: CarService, private userService: UserService) { }
 
@@ -35,8 +39,22 @@ export class AppComponent implements OnInit {
   }
 
   selectUser(userId: number): void {
+    this.isFetchingUser = true;
     this.userService.getUserById(userId).subscribe((user) => {
       this.selectedUser = user;
+      this.isFetchingUser = false;
     });
+  }
+
+  selectCar(carId: number): void {
+    this.isFetchingCar = true;
+    this.carService.getCarById(carId).subscribe((car) => {
+      this.selectedCar = car;
+      this.isFetchingCar = false;
+    })
+  }
+
+  selectService(serviceName: string): void {
+    this.selectedService = serviceName;
   }
 }

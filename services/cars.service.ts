@@ -1,22 +1,70 @@
 const cars = [
     {
         id: 0,
-        name: 'car 1',
+        name: 'Stellaris',
         brand: "Nissan",
         type: "Micra"
     },
     {
         id: 1,
-        name: 'car 2',
+        name: 'Zephyr',
         brand: "Toyota",
         type: "RAV 4"
     },
     {
         id: 2,
-        name: 'car 3',
+        name: 'Ember',
         brand: "Toyota",
         type: "CHR"
-    }
+    },
+    {
+        id: 3,
+        name: 'Equinox',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 4,
+        name: 'Maverick',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 5,
+        name: 'Veritas',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 6,
+        name: 'Nocturne',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 7,
+        name: 'Sundancer',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 9,
+        name: 'Serpent',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 9,
+        name: 'Horizon',
+        brand: "Toyota",
+        type: "CHR"
+    },
+    {
+        id: 10,
+        name: 'Nova',
+        brand: "Toyota",
+        type: "CHR"
+    },
 ]
 
 export function query(): Promise<any[]> {

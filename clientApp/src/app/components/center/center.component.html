@@ -1,16 +1,12 @@
 <section class="center-container">
   <header>Display</header>
   <main>
-    <div class="cars--container">
-      <p *ngFor="let car of cars">{{ car.name }}</p>
-    </div>
-    <div class="users--container">
-      <p *ngFor="let user of users" (click)="onSelectUser(user.id)">{{user.userName}}</p>
-      <ng-container *ngIf="selectedUser">
-        <h3>Selected User:</h3>
-        <p>{{selectedUser.firstName}}</p>
-        <p>{{selectedUser.lastName}}</p>
-        <p>{{selectedUser.userName}}</p>
+    <div class="list--container">
+      <ng-container *ngIf="selectedService === 'cars' && cars && cars.length > 0">
+        <app-car-list [cars]="cars" class="list" (carSelected)="selectCar($event)"></app-car-list>
+      </ng-container>
+      <ng-container *ngIf="selectedService === 'users' && users && users.length > 0">
+        <app-user-list [users]="users" class="list" (userSelected)="selectUser($event)"></app-user-list>
       </ng-container>
     </div>
   </main>

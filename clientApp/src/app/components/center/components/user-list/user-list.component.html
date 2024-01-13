@@ -1,0 +1,3 @@
+<section class="user-list">
+  <app-user-preview *ngFor="let user of users" [user]="user" (click)="onUserSelected(user.id)"></app-user-preview>
+</section>

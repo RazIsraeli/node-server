@@ -1,0 +1,21 @@
+@import '../../../../../variables.scss';
+@import '../../../../../mixins.scss';
+
+.car-preview {
+  align-items: center;
+  box-shadow: 0 0 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  width: 16rem;
+
+  &:hover {
+    box-shadow: 0 0 2px $tercirary-color-light;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+
+    transition: letter-spacing 1s;
+  }
+}

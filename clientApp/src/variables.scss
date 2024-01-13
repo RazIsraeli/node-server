@@ -1,5 +1,7 @@
 $text-color-light: white;
+$text-color-grey: rgb(151, 147, 147);
 $text-color-dark: black;
+$text-color-disabled: rgb(198 194 194 / 39%);
 
 $primary-color-light: #c965f0;
 $primary-color: #a72fd6;
@@ -10,6 +12,10 @@ $secondary-color-light: #ffd1e3;
 $secondary-color: #f395b9;
 $secondary-color-dark: #b93b6b;
 
+$tercirary-color: #ec426c;
+$tercirary-color-light: #f17b99;
+$tercirary-color-dark: #a00f33;
+
 $font-size-regular: 16px;
 $font-size-big: 18px;
 $font-size-bigger: 20px;
@@ -18,3 +24,4 @@ $font-size-smaller: 12px;
 
 $default-box-shadow: 0 0 1px 0px $secondary-color-light;
 $border-block-primary: #ffd1e3;
+
