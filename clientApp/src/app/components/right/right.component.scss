@@ -31,9 +31,16 @@
     height: 100%;
 
     .loading {
-      margin: 0.5rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       animation: blink 2s infinite;
+      height: 222px;
+      margin: 0.5rem;
+    }
+
+    *:not(:last-child) {
+      border-block-end: 1px solid $text-color-light;
     }
   }
 }

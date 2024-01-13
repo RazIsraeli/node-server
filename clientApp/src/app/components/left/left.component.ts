@@ -10,6 +10,7 @@ import { User } from 'src/app/models/user';
 export class LeftComponent {
   @Input() cars?: Car[];
   @Input() users?: User[];
+  @Input() activeService?: string;
   @Output() selectedService: EventEmitter<string> = new EventEmitter<string>();
 
   onServiceSelected(serviceName: string): void {

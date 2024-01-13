@@ -20,11 +20,19 @@
 
     .service {
       cursor: pointer;
+      display: flex;
       font-size: $font-size-big;
+      justify-content: center;
+      width: 100%;
 
       &.disabled {
         color: $text-color-disabled;
         cursor: not-allowed;
+      }
+
+      &.active {
+        box-shadow: 0 0 1px #ccc;
+        background-color: $primary-color-light;
       }
     }
   }

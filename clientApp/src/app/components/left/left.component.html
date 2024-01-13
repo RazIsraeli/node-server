@@ -1,11 +1,10 @@
 <section class="left-container">
   <header>Services</header>
   <main>
-    <div class="service service-cars" [ngClass]="{'disabled': !cars?.length}" (click)="onServiceSelected('cars')">Cars</div>
-    <div class="service service-users" [ngClass]="{'disabled': !users?.length}" (click)="onServiceSelected('users')">Users</div>
+    <div class="service service-cars" [ngClass]="{'disabled': !cars?.length, 'active': activeService ==='cars'}" (click)="onServiceSelected('cars')">Cars</div>
+    <div class="service service-users" [ngClass]="{'disabled': !users?.length, 'active': activeService ==='users'}" (click)="onServiceSelected('users')">Users</div>
     <div class="service service-pets disabled">Pets</div>
     <div class="service service-developers disabled">Developers</div>
     <div class="service service-hunters disabled">Hunters</div>
-
   </main>
 </section>
