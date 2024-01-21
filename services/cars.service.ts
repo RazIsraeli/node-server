@@ -3,67 +3,67 @@ const cars = [
         id: 0,
         name: 'Stellaris',
         brand: "Nissan",
-        type: "Micra"
+        carType: "Micra"
     },
     {
         id: 1,
         name: 'Zephyr',
         brand: "Toyota",
-        type: "RAV 4"
+        carType: "RAV 4"
     },
     {
         id: 2,
         name: 'Ember',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Audi",
+        carType: "RS6"
     },
     {
         id: 3,
         name: 'Equinox',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Ford",
+        carType: "Mustang "
     },
     {
         id: 4,
         name: 'Maverick',
         brand: "Toyota",
-        type: "CHR"
+        carType: "CHR"
     },
     {
         id: 5,
         name: 'Veritas',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Jeep",
+        carType: "Wrangler "
     },
     {
         id: 6,
         name: 'Nocturne',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Tesla",
+        carType: "Model S"
     },
     {
         id: 7,
         name: 'Sundancer',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "BMW",
+        carType: " M2"
     },
     {
         id: 9,
         name: 'Serpent',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Porsche",
+        carType: "Taycan"
     },
     {
         id: 9,
         name: 'Horizon',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Mercedes",
+        carType: "AMG A "
     },
     {
         id: 10,
         name: 'Nova',
-        brand: "Toyota",
-        type: "CHR"
+        brand: "Honda",
+        carType: "Civic "
     },
 ]
 

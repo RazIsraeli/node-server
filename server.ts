@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
+import SSEService from './services/sse.service';
 
 const app = express();
 
@@ -17,6 +18,10 @@ if (process.env.NODE_ENV === 'production') {
     }
     app.use(cors(corsOptions))
 }
+
+export const sseService = new SSEService();
+app.use('/sse', sseService.app);
+
 
 import carsRouter from './routes/cars.routes';
 import usersRouter from './routes/users.routes';

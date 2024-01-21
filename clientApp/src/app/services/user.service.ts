@@ -15,11 +15,11 @@ export class UserService {
 
   baseUrl = environment.baseUrl;
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}users`)
+  getUsers(): void {
+    this.http.get<User[]>(`${this.baseUrl}users`).subscribe();
   }
 
-  getUserById(userId: number): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}users/${userId}`);
+  getUserById(userId: number): void {
+    this.http.get<User>(`${this.baseUrl}users/${userId}`).subscribe();
   }
 }

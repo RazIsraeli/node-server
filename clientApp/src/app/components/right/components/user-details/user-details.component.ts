@@ -7,5 +7,15 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent {
-  @Input() user?: User;
+  private _user?: User;
+
+  @Input() set user(val: User | undefined) {
+    this._user = val;
+
+    console.log('this._user has changed: ', this._user);
+  }
+
+  get user(): User | undefined {
+    return this._user;
+  }
 }

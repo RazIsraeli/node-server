@@ -17,11 +17,11 @@ export class CarService {
   baseUrl = environment.baseUrl;
 
 
-  getCars(): Observable<Car[]> {
-    return this.http.get<Car[]>(`${this.baseUrl}cars`)
+  getCars(): void {
+    this.http.get<Car[]>(`${this.baseUrl}cars`).subscribe()
   }
 
-  getCarById(carId: number): Observable<Car> {
-    return this.http.get<Car>(`${this.baseUrl}cars/${carId}`);
+  getCarById(carId: number): void {
+    this.http.get<Car>(`${this.baseUrl}cars/${carId}`).subscribe();
   }
 }
