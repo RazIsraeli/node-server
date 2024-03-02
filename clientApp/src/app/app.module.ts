@@ -15,6 +15,7 @@ import { UserListComponent } from './components/center/components/user-list/user
 import { UserPreviewComponent } from './components/center/components/user-preview/user-preview.component';
 import { CarDetailsComponent } from './components/right/components/car-details/car-details.component';
 import { UserDetailsComponent } from './components/right/components/user-details/user-details.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UserDetailsComponent } from './components/right/components/user-details
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
