@@ -2,11 +2,4 @@ node_modules
 package-lock.json
 dist/
 .vscode/
-
-clientApp/dist
-clientApp/tmp
-clientApp/out-tsc
-clientApp/bazel-out
-clientApp/node_modules
 clientApp/.vscode/*
-!clientApp/.vscode/settings.json
