@@ -5,6 +5,10 @@ import { UserService } from './services/user.service';
 import { User } from './models/user';
 import { SseService } from './services/sse.service';
 
+import { Store } from '@ngrx/store';
+import { selectCarCollection, selectCars } from './state/car.selectors';
+import { carApiActions } from './state/car.actions';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,7 +24,10 @@ export class AppComponent implements OnInit {
   isFetchingUser: boolean = false;
   isFetchingCar: boolean = false;
 
-  constructor(private carService: CarService, private userService: UserService, private sseService: SseService, private changeDetector: ChangeDetectorRef) { }
+  cars$ = this.store.select(selectCars);
+  carsCollection$ = this.store.select(selectCarCollection);
+
+  constructor(private carService: CarService, private userService: UserService, private sseService: SseService, private changeDetector: ChangeDetectorRef, private store: Store) { }
 
   ngOnInit(): void {
     this.sseService.start();
@@ -64,7 +71,9 @@ export class AppComponent implements OnInit {
   }
 
   loadCars(): void {
-    this.carService.getCars();
+    this.carService.getCars().subscribe((cars) => {
+      this.store.dispatch(carApiActions.retrievedCarsList({ cars }));
+    })
   }
 
   loadUsers(): void {

@@ -16,6 +16,10 @@ import { UserPreviewComponent } from './components/center/components/user-previe
 import { CarDetailsComponent } from './components/right/components/car-details/car-details.component';
 import { UserDetailsComponent } from './components/right/components/user-details/user-details.component';
 import { StoreModule } from '@ngrx/store';
+import { carReducer } from './state/car.reducer';
+import { collectionReducer } from './state/collection.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ cars: carReducer, collection: collectionReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly:environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
