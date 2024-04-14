@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
 
   loadCars(): void {
     this.carService.getCars().subscribe((cars) => {
-      this.store.dispatch(carApiActions.retrievedCarsList({ cars }));
+      this.store.dispatch(carApiActions.getAllCars({ cars }));
     })
   }
 
