@@ -24,4 +24,8 @@ export class CarService {
   getCarById(carId: number): void {
     this.http.get<Car>(`${this.baseUrl}cars/${carId}`).subscribe();
   }
+
+  deleteCar(carId: number): Observable<Car> {
+    return this.http.post<Car>(`${this.baseUrl}cars/deleteCar`, { carId: carId });
+  }
 }

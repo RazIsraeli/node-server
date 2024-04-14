@@ -1,5 +1,6 @@
 <section class="car-preview">
   <ng-container *ngIf="car">
+    <button (click)="onDeleteCar($event, car.id)" class="delete-car">X</button>
     <p>{{car.name}}</p>
   </ng-container>
 </section>

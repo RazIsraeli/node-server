@@ -1,4 +1,4 @@
-const cars = [
+let cars = [
     {
         id: 0,
         name: 'Stellaris',
@@ -89,6 +89,26 @@ export function getById(carId: number): Promise<any> {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(carToDisplay);
+        }, 1500);
+    })
+}
+
+export function deleteById(carId: number): Promise<any> {
+
+    const carToRemove = cars.find(car => car.id === carId);
+    if (!carToRemove) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject();
+            }, 1500);
+        })
+    }
+
+    cars = cars.filter(car => car.id !== carId);
+
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(carToRemove)
         }, 1500);
     })
 }

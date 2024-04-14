@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getById, query } from '../services/cars.service';
+import { getById, query, deleteById } from '../services/cars.service';
 import { sseService } from '../server';
 
 export const getCars = async (req: Request, res: Response) => {
@@ -33,5 +33,16 @@ export const getCarById = async (req: Request, res: Response) => {
         sseService.sendMessageToAll(sseCar);
     } catch (error) {
         res.status(500).json(`Could not find car with id: ${carId}`);
+    }
+}
+
+export const removeCarById = async (req: Request, res: Response) => {
+    try {
+        const { carId } = req.body;
+        const carToRemove = await deleteById(carId);
+        res.send(carToRemove);
+    } catch (error) {
+        console.error('Failed to remove car', error)
+        res.status(500).send({ err: 'Failed to remove car' })
     }
 }
