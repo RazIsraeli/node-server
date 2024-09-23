@@ -29,7 +29,7 @@ import usersRouter from './routes/users.routes';
 app.use('/api/cars', carsRouter);
 app.use('/api/users', usersRouter);
 
-app.get('/', (rea: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
     res.send('Hello from Express! Our cars and users apis are available for you at "api/cars" and "api/users"');
 });
 
